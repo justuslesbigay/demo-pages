@@ -1,29 +1,11 @@
 # explore
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the template for the `explore` page. This is where users can swipe through user profiles and get matches.
 
-## Recommended IDE Setup
+## contribute
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This page is using vue. Make sure the `dist/` directory is not ignored when contributing. Until a custom action is configured, we will be running `npm run build` and pushing changes to this directory to the repo. The demo mobile app will be rendering the following url: `https://justuslesbigay.github.io/demo-pages/explore/dist/`
 
-## Customize configuration
+It will be rendered with a fixed height of `675px`
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
