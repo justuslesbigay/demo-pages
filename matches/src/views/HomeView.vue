@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import MatchCard from '@/components/MatchCard.vue'
+
 const profilePics = [
   'photo-1484588168347-9d835bb09939.avif',
   'photo-1488426862026-3ee34a7d66df.avif',
@@ -26,13 +28,12 @@ const profilePics = [
 
 <template>
   <main>
-    <section class="grid grid-cols-3 gap-2">
-      <img
-        v-for="profilePic in profilePics"
-        :key="profilePic"
-        :src="`/profile-pics/${profilePic}`"
-        class="w-full h-48 flex-auto object-cover rounded-md"
-      />
+    <section>
+      <ul class="grid grid-cols-3 gap-2">
+        <li v-for="profilePic in profilePics" :key="profilePic">
+          <MatchCard :match="{ image: `/profile-pics/${profilePic}` }" />
+        </li>
+      </ul>
     </section>
   </main>
 </template>
