@@ -1,1 +1,14 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-brandpink-50: oklch(0.95 0.07 339.8);
+  --color-brandpink-100: oklch(0.92 0.1 339.8);
+  --color-brandpink-200: oklch(0.87 0.14 339.8);
+  --color-brandpink-300: oklch(0.8 0.19 339.8);
+  --color-brandpink-400: oklch(0.7 0.23 339.8);
+  --color-brandpink-500: oklch(0.61 0.265452 339.8007);
+  --color-brandpink-600: oklch(0.52 0.26 339.8);
+  --color-brandpink-700: oklch(0.44 0.24 339.8);
+  --color-brandpink-800: oklch(0.35 0.2 339.8);
+  --color-brandpink-900: oklch(0.25 0.17 339.8);
+}

@@ -23,7 +23,7 @@ defineProps<{
     </a>
 
     <!-- icons -->
-    <span href="" class="absolute inset-0 text-white"></span>
+    <span href="" class="absolute top-0 right-0 text-white"></span>
 
     <img :src="match.image" class="w-full h-48 flex-auto object-cover rounded-md" />
   </div>
