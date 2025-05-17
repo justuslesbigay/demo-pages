@@ -1,29 +1,29 @@
-# name: explore
-# run-name: Build explore page demo
-# on: 
-#   workflow_call:
+name: explore
+run-name: Build explore page demo
+on: 
+  workflow_call:
 
-# jobs:
-#   Build-and-Push:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Update config
-#         run: |
-#           git config --global user.email "csperando@gmail.com"
-#           git config --global user.name "Coleman Sperando"
+jobs:
+  Build-and-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update config
+        run: |
+          git config --global user.email "csperando@gmail.com"
+          git config --global user.name "Coleman Sperando"
 
-#       - name: Build dist/ directory
-#         run: |
-#           echo "${{  github.repository }} cloned"
-#           cd explore
-#           npm install
-#           npm run build
+      - name: Build dist/ directory
+        run: |
+          echo "${{  github.repository }} cloned"
+          cd explore
+          npm install
+          npm run build
 
-#       - name: Force commit updated dist
-#         run: |
-#           git add dist -f
-#           git commit -m "actions automated commit build dist/"
+      - name: Force commit updated dist
+        run: |
+          git add dist -f
+          git commit -m "actions automated commit build dist/"
 
-#       - name: Push dist
-#         run: |
-#           git push origin main --force
+      - name: Push dist
+        run: |
+          git push origin main --force
