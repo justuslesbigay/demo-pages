@@ -8,3 +8,11 @@ on:
 # jobs:
 #   build-explore:
 #     uses: ./.github/workflows/explore.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: do nothing
+        run: |
+          echo "done"
