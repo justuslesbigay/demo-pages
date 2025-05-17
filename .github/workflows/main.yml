@@ -1,0 +1,14 @@
+name: build
+run-name: Build demo pages
+on:
+  push:
+    branches: 
+    - main
+
+jobs:
+  build-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo "test"
+        
