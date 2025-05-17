@@ -1,9 +1,0 @@
-name: CI
-run-name: Run build jobs by page
-on: 
-  push:
-    branches: [main]
-
-jobs:
-  build-explore:
-    uses: ./.github/workflows/explore.yml
