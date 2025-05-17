@@ -10,12 +10,15 @@ jobs:
       - name: debug
         run: |
           echo "should see [***]"
-          echo "Do you see me? [${{ secrets.token }}]"
+          echo "Do you see me? [${{ secrets.TOKEN }}]"
+
+      - name: debug 2
+        run: printenv
 
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.token }}
+          token: ${{ secrets.TOKEN }}
 
       - name: Update config
         run: |
