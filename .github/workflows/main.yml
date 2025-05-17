@@ -6,12 +6,6 @@ on:
     - main
 
 jobs:
-  build-pages:
-    runs-on: ubuntu-latest
-    steps:
-      - name: test
-        run: echo "test"
-
-      - name: explore
-        uses: justuslesbigay/demo-pages/.github/explore.yml@main
+  build-explore:
+    uses: ./.github/explore.yml
         
