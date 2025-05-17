@@ -7,7 +7,6 @@ on:
 
 jobs:
   checkout:
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -16,4 +15,3 @@ jobs:
 
   build-explore:
     uses: ./.github/workflows/explore.yml
-        
