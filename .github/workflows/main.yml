@@ -13,5 +13,5 @@ jobs:
         run: echo "test"
 
       - name: explore
-        uses: justuslesbigay/demo-pages/.github/actions/explore.yml@main
+        uses: justuslesbigay/demo-pages/.github/explore.yml@main
         
