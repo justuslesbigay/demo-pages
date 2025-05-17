@@ -1,0 +1,9 @@
+name: CI
+run-name: Build Vite Application
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  build-explore:
+    uses: ./explore.yml

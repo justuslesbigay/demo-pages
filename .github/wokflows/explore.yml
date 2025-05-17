@@ -1,6 +1,7 @@
-name: CI
-run-name: Build Vite Application
-on: [push]
+name: explore
+run-name: Build explore page demo
+on: 
+  workflow_call:
 
 jobs:
   Build-and-Push:
