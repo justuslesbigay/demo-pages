@@ -1,9 +1,9 @@
-# name: build
-# run-name: Build demo pages
-# on:
-#   push:
-#     branches: 
-#     - main
+name: build
+run-name: Build demo pages
+on:
+  push:
+    branches: 
+    - main
 
 # jobs:
 #   build-explore:
