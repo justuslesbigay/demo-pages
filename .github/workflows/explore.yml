@@ -5,21 +5,7 @@ on:
 
 jobs:
   Build-and-Push:
-    runs-on: ubuntu-latest
     steps:
-      - name: debug
-        run: |
-          echo "should see [***]"
-          echo "Do you see me? [${{ secrets.TOKEN }}]"
-
-      - name: debug 2
-        run: printenv
-
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.TOKEN }}
-
       - name: Update config
         run: |
           git config --global user.email "csperando@gmail.com"
