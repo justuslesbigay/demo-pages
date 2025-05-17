@@ -15,4 +15,5 @@ jobs:
           token: ${{ secrets.token }}
 
   build-explore:
+    runs-on: ubuntu-latest
     uses: ./.github/workflows/explore.yml
