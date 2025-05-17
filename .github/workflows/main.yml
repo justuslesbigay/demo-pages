@@ -1,19 +1,10 @@
-name: build
-run-name: Build demo pages
-on:
-  push:
-    branches: 
-    - main
+# name: build
+# run-name: Build demo pages
+# on:
+#   push:
+#     branches: 
+#     - main
 
-jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.token }}
-
-  build-explore:
-    runs-on: ubuntu-latest
-    uses: ./.github/workflows/explore.yml
+# jobs:
+#   build-explore:
+#     uses: ./.github/workflows/explore.yml
