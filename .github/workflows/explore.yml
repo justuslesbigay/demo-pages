@@ -10,7 +10,7 @@ jobs:
       - name: debug
         run: |
           echo "should see [***]"
-          echo ${{ secrets.token }}
+          echo "Do you see me? [${{ secrets.token }}]"
 
       - name: Checkout repo
         uses: actions/checkout@v4
