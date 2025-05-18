@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 
-interface Match {
-  image: string
-  name: string
-  age: number
-}
+import type { Match } from '@/lib/matches'
 
 defineProps<{
   match: Match
