@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MatchesView from '../views/MatchesView.vue'
 import MessagesView from '../views/MessagesView.vue'
 
+const base = (import.meta.env.PROD) ? '/demo-pages/matches/dist/' : import.meta.env.BASE_URL;
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL || '/demo-pages/matches/dist/'),
+  history: createWebHistory(base),
   routes: [
     {
       path: '/',
