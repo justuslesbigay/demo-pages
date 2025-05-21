@@ -1,6 +1,6 @@
 import { Temporal } from 'temporal-polyfill'
 
-const base = (import.meta.env.PROD) ? '/demo-pages/matches/dist/' : import.meta.env.BASE_URL;
+const base = import.meta.env.PROD ? '/demo-pages/matches/dist/' : import.meta.env.BASE_URL
 
 export interface Match {
   matchId: string
@@ -13,7 +13,7 @@ export interface Match {
 export const matches: Match[] = [
   {
     matchId: '/profile-pics/photo-1484588168347-9d835bb09939.avif',
-    name: 'Ellen',
+    name: 'Indigo',
     age: 27,
     image: base + '/profile-pics/photo-1484588168347-9d835bb09939.avif',
     matched_at: Temporal.Now.instant(),
@@ -34,14 +34,14 @@ export const matches: Match[] = [
   },
   {
     matchId: '/profile-pics/photo-1501196354995-cbb51c65aaea.avif',
-    name: 'Marlene',
+    name: 'Marcus',
     age: 31,
     image: base + '/profile-pics/photo-1501196354995-cbb51c65aaea.avif',
     matched_at: Temporal.Now.instant().subtract({ minutes: 35 }),
   },
   {
     matchId: '/profile-pics/photo-1504834636679-cd3acd047c06.avif',
-    name: 'Brandon',
+    name: 'Rowan',
     age: 31,
     image: base + '/profile-pics/photo-1504834636679-cd3acd047c06.avif',
     matched_at: Temporal.Now.instant().subtract({ hours: 1, minutes: 15 }),
@@ -76,16 +76,16 @@ export const matches: Match[] = [
   },
   {
     matchId: '/profile-pics/photo-1519699047748-de8e457a634e.avif',
-    name: 'Arthur',
+    name: 'Aspen',
     age: 34,
     image: base + '/profile-pics/photo-1519699047748-de8e457a634e.avif',
     matched_at: Temporal.Now.instant().subtract({ hours: 38 }),
   },
   {
     matchId: '/profile-pics/photo-1521119989659-a83eee488004.avif',
-    name: 'Suzanne',
-    age: 19,
-    image: base + '/profile-pics/photo-1521119989659-a83eee488004.avif',
+    name: 'Sebastian',
+    age: 29,
+    image: '/profile-pics/photo-1521119989659-a83eee488004.avif',
     matched_at: Temporal.Now.instant().subtract({ hours: 53 }),
   },
   {
@@ -111,7 +111,7 @@ export const matches: Match[] = [
   },
   {
     matchId: '/profile-pics/photo-1535295972055-1c762f4483e5.avif',
-    name: 'Minnie',
+    name: 'Phoenix',
     age: 25,
     image: base + '/profile-pics/photo-1535295972055-1c762f4483e5.avif',
     matched_at: Temporal.Now.instant().subtract({ hours: 169, minutes: 20 }),
@@ -125,14 +125,14 @@ export const matches: Match[] = [
   },
   {
     matchId: '/profile-pics/photo-1539571696357-5a69c17a67c6.avif',
-    name: 'Marion',
+    name: 'Martin',
     age: 36,
     image: base + '/profile-pics/photo-1539571696357-5a69c17a67c6.avif',
     matched_at: Temporal.Now.instant().subtract({ hours: 306 }),
   },
   {
     matchId: '/profile-pics/photo-1540569014015-19a7be504e3a.avif',
-    name: 'Francis',
+    name: 'Zephyr',
     age: 26,
     image: base + '/profile-pics/photo-1540569014015-19a7be504e3a.avif',
     matched_at: Temporal.Now.instant().subtract({ hours: 364, minutes: 10 }),

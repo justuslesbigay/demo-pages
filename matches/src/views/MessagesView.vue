@@ -18,7 +18,7 @@ const store = useMessagesStore()
         :key="conversation.match.matchId"
         class="flex gap-2 items-start"
       >
-        <MatchMiniPhoto :match="conversation.match" />
+        <MatchMiniPhoto :match="conversation.match" class="flex-none" />
         <div
           class="flex flex-col"
           :class="{ 'text-brandpink-600': conversation.messages.length === 0 }"
@@ -26,7 +26,7 @@ const store = useMessagesStore()
           <header class="font-semibold text-xl">{{ conversation.match.name }}</header>
 
           <p v-if="conversation.messages.length === 0" class="italic">Start a conversation!</p>
-          <p v-else>{{ conversation.messages.at(0)?.message }}</p>
+          <p v-else class="line-clamp-2">{{ conversation.messages.at(0)?.message }}</p>
         </div>
       </li>
     </ul>

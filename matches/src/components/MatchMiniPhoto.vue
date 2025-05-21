@@ -9,5 +9,5 @@ defineProps<{
 </script>
 
 <template>
-  <img :src="match.image" class="h-20 w-16 object-cover rounded-md" />
+  <img :src="match.image" class="w-16 h-20 object-cover rounded-md" />
 </template>
