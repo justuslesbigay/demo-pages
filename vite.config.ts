@@ -13,6 +13,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  // base: '/demo-pages/matches/dist/',
-  base: '',
 })

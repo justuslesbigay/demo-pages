@@ -1,9 +1,39 @@
-# Dating App Demo Pages
+# .
 
-Demo pages for the Wix Mobile App for JustUs! Three main pages need to be developed, an "explore" page for swiping, "matches" for messaging, and a "profile" page for uploading images, adding a bio, etc. For now, these pages will be built on the web and rendered as an iFrame on the mobile app.
+This template should help get you started developing with Vue 3 in Vite.
 
-"Explore" - https://justuslesbigay.github.io/demo-pages/explore/dist/index.html
+## Recommended IDE Setup
 
-"Matches" - https://justuslesbigay.github.io/demo-pages/matches/dist/
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-"Profile" - TBD
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+bun install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+bun dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+bun run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+bun lint
+```

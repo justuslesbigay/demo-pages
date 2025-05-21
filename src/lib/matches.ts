@@ -10,6 +10,8 @@ export interface Match {
   matched_at: Temporal.Instant
 }
 
+console.log({ base })
+
 export const matches: Match[] = [
   {
     matchId: '/profile-pics/photo-1484588168347-9d835bb09939.avif',
@@ -85,7 +87,7 @@ export const matches: Match[] = [
     matchId: '/profile-pics/photo-1521119989659-a83eee488004.avif',
     name: 'Sebastian',
     age: 29,
-    image: '/profile-pics/photo-1521119989659-a83eee488004.avif',
+    image: base + '/profile-pics/photo-1521119989659-a83eee488004.avif',
     matched_at: Temporal.Now.instant().subtract({ hours: 53 }),
   },
   {
