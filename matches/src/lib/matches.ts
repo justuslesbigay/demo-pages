@@ -1,5 +1,7 @@
 import { Temporal } from 'temporal-polyfill'
 
+const base = (import.meta.env.PROD) ? '/demo-pages/matches/dist/' : import.meta.env.BASE_URL;
+
 export interface Match {
   matchId: string
   name: string
@@ -10,7 +12,7 @@ export interface Match {
 
 export const matches: Match[] = [
   {
-    matchId: './profile-pics/photo-1484588168347-9d835bb09939.avif',
+    matchId: base + '/profile-pics/photo-1484588168347-9d835bb09939.avif',
     name: 'Ellen',
     age: 27,
     image: '/profile-pics/photo-1484588168347-9d835bb09939.avif',
