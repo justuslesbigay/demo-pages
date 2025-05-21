@@ -10,7 +10,7 @@ export interface Match {
 
 export const matches: Match[] = [
   {
-    matchId: '/profile-pics/photo-1484588168347-9d835bb09939.avif',
+    matchId: './profile-pics/photo-1484588168347-9d835bb09939.avif',
     name: 'Ellen',
     age: 27,
     image: '/profile-pics/photo-1484588168347-9d835bb09939.avif',
