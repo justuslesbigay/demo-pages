@@ -3,6 +3,7 @@ import MatchesView from '../views/MatchesView.vue'
 import MessagesView from '../views/MessagesView.vue'
 
 const base = (import.meta.env.PROD) ? '/demo-pages/matches/dist/' : import.meta.env.BASE_URL;
+console.log(base);
 
 const router = createRouter({
   history: createWebHistory(base),
