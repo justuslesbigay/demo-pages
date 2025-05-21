@@ -4,6 +4,6 @@ Demo pages for the Wix Mobile App for JustUs! Three main pages need to be develo
 
 "Explore" - https://justuslesbigay.github.io/demo-pages/explore/dist/index.html
 
-"Matches" - https://justuslesbigay.github.io/demo-pages/matches/dist/index.html
+"Matches" - https://justuslesbigay.github.io/demo-pages/matches/dist/
 
 "Profile" - TBD
