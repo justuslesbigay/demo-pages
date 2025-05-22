@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { users } from '../../db/mock.users.js'
+import { users } from '../../db/mock.users.ts'
 import { ref } from 'vue'
 
 import filterIcon from '@/assets/filter.svg'
