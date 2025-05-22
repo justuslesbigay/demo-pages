@@ -1,7 +1,8 @@
 name: explore
 run-name: Build explore page demo
-on: 
+on:
   workflow_call:
+if: false
 
 jobs:
   Build-and-Push:
