@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MatchesNav from '@/components/MatchesNav.vue'
-import MatchCard from '@/components/MatchCard.vue'
+import MatchesNav from '@/components/matches/MatchesNav.vue'
+import MatchCard from '@/components/matches/MatchCard.vue'
 
 import { matches } from '@/lib/matches'
 </script>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MatchesNav from '@/components/MatchesNav.vue'
-import MatchMiniPhoto from '@/components/MatchMiniPhoto.vue'
+import MatchesNav from '@/components/matches/MatchesNav.vue'
+import MatchMiniPhoto from '@/components/matches/MatchMiniPhoto.vue'
 
 import { useMessagesStore } from '@/stores/messages'
 
