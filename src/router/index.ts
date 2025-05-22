@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MatchesView from '../views/MatchesView.vue'
-import MessagesView from '../views/MessagesView.vue'
+import MessagesIndexView from '../views/MessagesIndexView.vue'
+import MatchMessagesView from '../views/MatchMessagesView.vue'
 import ExploreView from '../views/ExploreView.vue'
 
 const base = import.meta.env.PROD ? '/demo-pages/matches/dist/' : import.meta.env.BASE_URL
@@ -15,8 +16,13 @@ const router = createRouter({
     },
     {
       path: '/messages',
-      name: 'messages',
-      component: MessagesView,
+      name: 'messages-index',
+      component: MessagesIndexView,
+    },
+    {
+      path: '/message/:matchId',
+      name: 'match-messages',
+      component: MatchMessagesView,
     },
     {
       path: '/explore',
