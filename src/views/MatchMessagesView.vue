@@ -14,13 +14,13 @@ const conversation = computed(() => store.conversations.get(matchId)!)
 
 const mostRecentlyReadMessage = computed(() =>
   conversation.value.messages.findLastIndex(
-    (message) => message.direction === 'sent' && message.readAt !== null,
+    (message) => message.direction === 'received' && message.readAt !== null,
   ),
 )
 </script>
 
 <template>
-  <main class="p-2">
+  <main class="p-2 h-full flex flex-col justify-between">
     <header class="flex items-end gap-2">
       <MatchMiniPhoto :match="conversation.match" />
       <p>Chatting with {{ conversation.match.name }}</p>

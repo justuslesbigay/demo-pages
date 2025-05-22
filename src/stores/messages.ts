@@ -99,6 +99,158 @@ const seedMessages: Conversation[] = [
         timestamp: matches[1].matched_at.add({ hours: 2, minutes: 5 }),
         readAt: matches[1].matched_at.add({ hours: 3, minutes: 20 }),
       },
+      {
+        messageId: '5',
+        message:
+          'Same here honestly. Just looking for genuine connections, you know? Maybe someone to grab coffee with and see where it goes.',
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 3, minutes: 25 }),
+        readAt: matches[1].matched_at.add({ hours: 3, minutes: 28 }),
+      },
+      {
+        messageId: '6',
+        message: 'coffee sounds nice :) im kinda new to all this tbh',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 3, minutes: 45 }),
+        readAt: matches[1].matched_at.add({ hours: 4, minutes: 15 }),
+      },
+      {
+        messageId: '7',
+        message: 'No pressure at all! What are you studying? I saw you mentioned being a student.',
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 3, minutes: 50 }),
+        readAt: matches[1].matched_at.add({ hours: 4, minutes: 17 }),
+      },
+      {
+        messageId: '8',
+        message: 'psychology! its pretty cool but lots of reading lol. what do u do?',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 4, minutes: 35 }),
+        readAt: matches[1].matched_at.add({ hours: 5, minutes: 10 }),
+      },
+      {
+        messageId: '9',
+        message:
+          'Psychology is fascinating! I work in marketing, so understanding people is part of my job too. Any particular area you want to focus on?',
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 4, minutes: 40 }),
+        readAt: matches[1].matched_at.add({ hours: 5, minutes: 12 }),
+      },
+      {
+        messageId: '10',
+        message: 'maybe clinical? idk yet tho. marketing sounds interesting! do u like it?',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 5, minutes: 55 }),
+        readAt: matches[1].matched_at.add({ hours: 6, minutes: 30 }),
+      },
+      {
+        messageId: '11',
+        message:
+          'Most days yeah! Clinical psych would be amazing - helping people through tough times. That takes a special person.',
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 6, minutes: 5 }),
+        readAt: matches[1].matched_at.add({ hours: 6, minutes: 32 }),
+      },
+      {
+        messageId: '12',
+        message: 'aw thanks :) ur sweet. so um... about that coffee?',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 7, minutes: 20 }),
+        readAt: matches[1].matched_at.add({ hours: 8, minutes: 45 }),
+      },
+      {
+        messageId: '13',
+        message:
+          "I'd love that! Do you have a favorite coffee place? Or somewhere you feel comfortable?",
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 7, minutes: 25 }),
+        readAt: matches[1].matched_at.add({ hours: 8, minutes: 47 }),
+      },
+      {
+        messageId: '14',
+        message: 'theres this place near campus called beans & books. its pretty chill',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 8, minutes: 55 }),
+        readAt: matches[1].matched_at.add({ hours: 9, minutes: 20 }),
+      },
+      {
+        messageId: '15',
+        message:
+          "Perfect! I love places with books. When works for you? I'm pretty flexible this week.",
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 9, minutes: 0 }),
+        readAt: matches[1].matched_at.add({ hours: 9, minutes: 22 }),
+      },
+      {
+        messageId: '16',
+        message: 'maybe thursday afternoon? like 3pm? i dont have class then',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 10, minutes: 15 }),
+        readAt: matches[1].matched_at.add({ hours: 11, minutes: 5 }),
+      },
+      {
+        messageId: '17',
+        message:
+          'Thursday at 3 sounds perfect! Should I meet you there or would you prefer to meet somewhere else first?',
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 10, minutes: 20 }),
+        readAt: matches[1].matched_at.add({ hours: 11, minutes: 7 }),
+      },
+      {
+        messageId: '18',
+        message: 'just meet there is fine! im getting kinda nervous now lol',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 11, minutes: 45 }),
+        readAt: matches[1].matched_at.add({ hours: 12, minutes: 30 }),
+      },
+      {
+        messageId: '19',
+        message:
+          "That's totally normal! I'm a little nervous too honestly. But I think it'll be fun - no pressure, just coffee and conversation.",
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 11, minutes: 50 }),
+        readAt: matches[1].matched_at.add({ hours: 12, minutes: 32 }),
+      },
+      {
+        messageId: '20',
+        message:
+          'ok good im not the only one haha. what should i expect? like what do ppl usually talk about?',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 13, minutes: 10 }),
+        readAt: matches[1].matched_at.add({ hours: 14, minutes: 15 }),
+      },
+      {
+        messageId: '21',
+        message:
+          "Just be yourself! We can talk about your studies, hobbies, favorite books since we'll be surrounded by them. Whatever feels natural.",
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 13, minutes: 15 }),
+        readAt: matches[1].matched_at.add({ hours: 14, minutes: 17 }),
+      },
+      {
+        messageId: '22',
+        message:
+          'that actually sounds really nice. i love talking about books! what kind do u like?',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 14, minutes: 35 }),
+        readAt: matches[1].matched_at.add({ hours: 15, minutes: 20 }),
+      },
+      {
+        messageId: '23',
+        message:
+          'Bit of everything really - fiction, some psychology books for work. What about you? Any recommendations?',
+        direction: 'sent',
+        timestamp: matches[1].matched_at.add({ hours: 14, minutes: 40 }),
+        readAt: matches[1].matched_at.add({ hours: 15, minutes: 22 }),
+      },
+      {
+        messageId: '24',
+        message:
+          'omg yes! have u read "the body keeps the score"? its about trauma and healing. so good but heavy',
+        direction: 'received',
+        timestamp: matches[1].matched_at.add({ hours: 16, minutes: 5 }),
+        readAt: null,
+      },
     ],
   },
   // Alfred (41)
