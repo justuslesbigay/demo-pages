@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 import MatchesView from '../views/MatchesView.vue'
 import MessagesIndexView from '../views/MessagesIndexView.vue'
 import MatchMessagesView from '../views/MatchMessagesView.vue'
@@ -7,6 +8,11 @@ import ExploreView from '../views/ExploreView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView,
+    },
     {
       path: '/matches',
       name: 'matches',
