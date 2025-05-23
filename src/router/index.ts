@@ -4,10 +4,8 @@ import MessagesIndexView from '../views/MessagesIndexView.vue'
 import MatchMessagesView from '../views/MatchMessagesView.vue'
 import ExploreView from '../views/ExploreView.vue'
 
-const base = import.meta.env.PROD ? '/demo-pages/matches/dist/' : import.meta.env.BASE_URL
-
 const router = createRouter({
-  history: createWebHistory(base),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/matches',

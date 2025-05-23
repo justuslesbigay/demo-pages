@@ -162,4 +162,3 @@ export const matches: Match[] = [
     matched_at: Temporal.Now.instant().subtract({ hours: 488, minutes: 15 }),
   },
 ]
-console.log('img', matches[0].image)

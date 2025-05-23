@@ -1,5 +1,5 @@
 name: build
-run-name: Build demo pages
+run-name: Build "demo-pages"
 on:
   push:
     branches:
