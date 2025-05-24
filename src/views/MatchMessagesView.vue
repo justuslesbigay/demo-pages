@@ -36,6 +36,20 @@ onMounted(() => {
   scrollToBottom()
 })
 
+const loremIpsum = [
+  'Aliquam at libero et mauris eleifend volutpat.',
+  'Nulla sit amet mi nec nisl ultricies pellentesque vitae sed nisl.',
+  'Mauris elementum dolor vitae ipsum consequat luctus.',
+  'In semper odio sed est suscipit cursus ut ac sem.',
+  'Phasellus eu sapien pellentesque, finibus orci non, imperdiet mi.',
+  'Vestibulum non velit sed ex feugiat aliquam.',
+  'Sed tincidunt risus eget neque accumsan interdum nec ac dolor.',
+  'Curabitur vitae nunc et libero mattis mattis ac eu urna.',
+  'Praesent sit amet neque convallis, porta augue sit amet, volutpat augue.',
+  'Donec vulputate mauris in purus scelerisque, accumsan porta nisl posuere.',
+]
+const randomResponse = () => loremIpsum[Math.floor(Math.random() * loremIpsum.length)]
+
 const sendMessage = async (event: Event) => {
   const formData = new FormData(event.target as HTMLFormElement)
   const message = formData.get('message')! as string
@@ -46,7 +60,7 @@ const sendMessage = async (event: Event) => {
   scrollToBottom()
   form.value!.reset()
 
-  store.receiveMessage(conversation.value, 'no response')
+  store.receiveMessage(conversation.value, randomResponse())
 }
 </script>
 
