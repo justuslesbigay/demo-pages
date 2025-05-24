@@ -43,7 +43,7 @@ onMounted(() => {
     </header>
 
     <div ref="messagesContainer" class="flex-1 overflow-y-auto min-h-0 px-4">
-      <ul class="flex flex-col gap-2 mt-auto">
+      <ul class="flex flex-col justify-end min-h-full gap-2 mt-auto">
         <li
           v-for="(message, i) in conversation.messages"
           :key="message.messageId"
