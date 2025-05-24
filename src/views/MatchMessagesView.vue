@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router'
 
 import MatchMiniPhoto from '@/components/matches/MatchMiniPhoto.vue'
 import Checks from '@/components/icons/Checks.vue'
+import PaperPlaneRight from '@/components/icons/PaperPlaneRight.vue'
 
 import { useMessagesStore } from '@/stores/messages'
 
@@ -90,12 +91,15 @@ const sendMessage = async (event: Event) => {
     </div>
 
     <div class="flex-shrink-0 p-4">
-      <form ref="form" @submit.prevent="sendMessage">
+      <form ref="form" @submit.prevent="sendMessage" class="flex gap-2 items-stretch">
         <input
           name="message"
           class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brandpink-500 focus:border-transparent"
           placeholder="Type a message..."
         />
+        <button type="submit" class="text-2xl">
+          <PaperPlaneRight />
+        </button>
       </form>
     </div>
   </main>
