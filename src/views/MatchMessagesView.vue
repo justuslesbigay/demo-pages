@@ -14,9 +14,11 @@ const conversation = computed(() => store.conversations.get(matchId)!)
 
 const mostRecentlyReadMessage = computed(() =>
   conversation.value.messages.findLastIndex(
-    (message) => message.direction === 'received' && message.readAt !== null,
+    (message) => message.direction === 'sent' && message.readAt !== null,
   ),
 )
+
+const finalMessageIsSent = computed(() => conversation.value.messages.at(-1)?.direction === 'sent')
 
 const messagesContainer = ref<HTMLElement>()
 
@@ -53,7 +55,7 @@ onMounted(() => {
           ]"
         >
           {{ message.message }}
-          <Checks v-if="i === mostRecentlyReadMessage" class="ml-auto" />
+          <Checks v-if="finalMessageIsSent && i === mostRecentlyReadMessage" class="ml-auto" />
         </li>
       </ul>
     </div>
