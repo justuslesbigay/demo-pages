@@ -1,3 +1,4 @@
+import { stripIndent } from 'common-tags'
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { Temporal } from 'temporal-polyfill'
@@ -13,18 +14,20 @@ interface Message {
   readAt: Temporal.Instant | null
 }
 
-type Conversation = { match: Match; messages: Message[] }
+type Conversation = { match: Match; personality: string; messages: Message[] }
 
 const seedMessages: Conversation[] = [
-  // Indigo (27)
-  // Personality: Creative, music lover, new to city. Values authentic connection.
-  // Style: Casual but articulate, uses emojis occasionally.
-  // Status: Views us as equal, slightly intrigued.
-  // State: Excited about new connections.
-  // Goals: Make friends, explore the city.
-  // Opener Archetype: Authentic Curiosity
   {
     match: matches[0],
+    personality: stripIndent`
+      Indigo (27)
+      Personality: Creative, music lover, new to city. Values authentic connection.
+      Style: Casual but articulate, uses emojis occasionally.
+      Status: Views us as equal, slightly intrigued.
+      State: Excited about new connections.
+      Goals: Make friends, explore the city.
+      Opener Archetype: Authentic Curiosity
+    `,
     messages: [
       {
         messageId: '1',
@@ -60,15 +63,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Leona (19)
-  // Personality: Student, somewhat shy, studious. New to dating apps.
-  // Style: Short messages, occasional typos, uses "lol" or "idk".
-  // Status: Slightly intimidated (older match), but curious.
-  // State: A bit overwhelmed by app experience.
-  // Goals: Casual conversation, maybe a confidence boost.
-  // Opener Archetype: Playful Challenge (gentle)
   {
     match: matches[1],
+    personality: stripIndent`
+      Leona (19)
+      Personality: Student, somewhat shy, studious. New to dating apps.
+      Style: Short messages, occasional typos, uses "lol" or "idk".
+      Status: Slightly intimidated (older match), but curious.
+      State: A bit overwhelmed by app experience.
+      Goals: Casual conversation, maybe a confidence boost.
+      Opener Archetype: Playful Challenge (gentle)
+    `,
     messages: [
       {
         messageId: '1',
@@ -253,15 +258,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Alfred (41)
-  // Personality: Professional photographer, confident, established. Values his craft.
-  // Style: Proper grammar, thoughtful responses, a bit formal.
-  // Status: Views self as mentor figure, slightly aloof but appreciative of genuine interest.
-  // State: Content, willing to share knowledge.
-  // Goals: Meaningful conversation, perhaps networking.
-  // Opener Archetype: Direct Compliment (professional)
   {
     match: matches[2],
+    personality: stripIndent`
+      Alfred (41)
+      Personality: Professional photographer, confident, established. Values his craft.
+      Style: Proper grammar, thoughtful responses, a bit formal.
+      Status: Views self as mentor figure, slightly aloof but appreciative of genuine interest.
+      State: Content, willing to share knowledge.
+      Goals: Meaningful conversation, perhaps networking.
+      Opener Archetype: Direct Compliment (professional)
+    `,
     messages: [
       {
         messageId: '1',
@@ -295,15 +302,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Marcus (31)
-  // Personality: Direct, no-nonsense, busy professional. Values efficiency. (Potentially spicy/horny)
-  // Style: Concise, to-the-point, uses abbreviations.
-  // Status: Equal but time-conscious.
-  // State: Focused, looking for straightforward interaction, maybe a quick hookup.
-  // Goals: Quickly assess compatibility for a date/meetup.
-  // Opener Archetype: Forward Invitation (direct)
   {
     match: matches[3],
+    personality: stripIndent`
+      Marcus (31)
+      Personality: Direct, no-nonsense, busy professional. Values efficiency. (Potentially spicy/horny)
+      Style: Concise, to-the-point, uses abbreviations.
+      Status: Equal but time-conscious.
+      State: Focused, looking for straightforward interaction, maybe a quick hookup.
+      Goals: Quickly assess compatibility for a date/meetup.
+      Opener Archetype: Forward Invitation (direct)
+    `,
     messages: [
       {
         messageId: '1',
@@ -346,15 +355,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Rowan (31)
-  // Personality: Dog lover, outdoorsy, friendly. Values companionship (human and canine).
-  // Style: Casual, enthusiastic, uses pet-related language.
-  // Status: Very approachable, sees us as a potential friend.
-  // State: Happy, energetic.
-  // Goals: Find dog park buddy, maybe more if connection is there.
-  // Opener Archetype: Shared Experience (pets)
   {
     match: matches[4],
+    personality: stripIndent`
+      Rowan (31)
+      Personality: Dog lover, outdoorsy, friendly. Values companionship (human and canine).
+      Style: Casual, enthusiastic, uses pet-related language.
+      Status: Very approachable, sees us as a potential friend.
+      State: Happy, energetic.
+      Goals: Find dog park buddy, maybe more if connection is there.
+      Opener Archetype: Shared Experience (pets)
+    `,
     messages: [
       {
         messageId: '1',
@@ -389,15 +400,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Reginald (42)
-  // Personality: Intellectual, bookworm, slightly pretentious but well-meaning. Values deep conversation.
-  // Style: Long sentences, proper punctuation, uses sophisticated vocabulary.
-  // Status: Views self as cultured, enjoys sharing knowledge.
-  // State: Looking for stimulating exchange.
-  // Goals: Find someone to discuss literature/ideas with.
-  // Opener Archetype: Intriguing Question (literary)
   {
     match: matches[5],
+    personality: stripIndent`
+      Reginald (42)
+      Personality: Intellectual, bookworm, slightly pretentious but well-meaning. Values deep conversation.
+      Style: Long sentences, proper punctuation, uses sophisticated vocabulary.
+      Status: Views self as cultured, enjoys sharing knowledge.
+      State: Looking for stimulating exchange.
+      Goals: Find someone to discuss literature/ideas with.
+      Opener Archetype: Intriguing Question (literary)
+    `,
     messages: [
       {
         messageId: '1',
@@ -425,15 +438,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Ray (24)
-  // Personality: Athletic, adventurous, confident. Values experiences. (Spicy)
-  // Style: Short, energetic messages, uses slang, exclamation points.
-  // Status: Views self as expert in his hobbies, eager to share.
-  // State: Pumped, looking for action.
-  // Goals: Find activity partner, maybe something more casual/fun.
-  // Opener Archetype: Flirty Tease (activity-based)
   {
     match: matches[6],
+    personality: stripIndent`
+      Ray (24)
+      Personality: Athletic, adventurous, confident. Values experiences. (Spicy)
+      Style: Short, energetic messages, uses slang, exclamation points.
+      Status: Views self as expert in his hobbies, eager to share.
+      State: Pumped, looking for action.
+      Goals: Find activity partner, maybe something more casual/fun.
+      Opener Archetype: Flirty Tease (activity-based)
+    `,
     messages: [
       {
         messageId: '1',
@@ -476,15 +491,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Dorothy (34)
-  // Personality: World traveler, free spirit, confident and experienced dater.
-  // Style: Storyteller, descriptive, flirty, uses winky faces.
-  // Status: Views us as an audience, but also a potential equal. Used to success.
-  // State: Nostalgic about travels, open to new adventures (and people).
-  // Goals: Share experiences, find a travel companion or fun date.
-  // Opener Archetype: Confident Assertion / Direct Compliment
   {
     match: matches[7],
+    personality: stripIndent`
+      Dorothy (34)
+      Personality: World traveler, free spirit, confident and experienced dater.
+      Style: Storyteller, descriptive, flirty, uses winky faces.
+      Status: Views us as an audience, but also a potential equal. Used to success.
+      State: Nostalgic about travels, open to new adventures (and people).
+      Goals: Share experiences, find a travel companion or fun date.
+      Opener Archetype: Confident Assertion / Direct Compliment
+    `,
     messages: [
       {
         messageId: '1',
@@ -520,15 +537,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Carrie (23)
-  // Personality: Fashionable, thrifty, flirty, energetic. Values self-expression.
-  // Style: Playful, uses emojis, slang, quick replies.
-  // Status: Confident in her style and appeal.
-  // State: Having fun with the app, looking for lighthearted connection.
-  // Goals: Shopping buddy, fun date, maybe more.
-  // Opener Archetype: Playful Challenge (style-based)
   {
     match: matches[8],
+    personality: stripIndent`
+      Carrie (23)
+      Personality: Fashionable, thrifty, flirty, energetic. Values self-expression.
+      Style: Playful, uses emojis, slang, quick replies.
+      Status: Confident in her style and appeal.
+      State: Having fun with the app, looking for lighthearted connection.
+      Goals: Shopping buddy, fun date, maybe more.
+      Opener Archetype: Playful Challenge (style-based)
+    `,
     messages: [
       {
         messageId: '1',
@@ -564,15 +583,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Aspen (34)
-  // Personality: Home chef, perfectionist, warm but a bit reserved initially. Values quality.
-  // Style: Detailed about food, thoughtful, takes a bit longer to reply.
-  // Status: Proud of skills, looking for genuine appreciation.
-  // State: Passionate about cooking, happy to share with the right person.
-  // Goals: Find someone who appreciates good food, possibly a dinner date.
-  // Opener Archetype: Direct Compliment (food-focused)
   {
     match: matches[9],
+    personality: stripIndent`
+      Aspen (34)
+      Personality: Home chef, perfectionist, warm but a bit reserved initially. Values quality.
+      Style: Detailed about food, thoughtful, takes a bit longer to reply.
+      Status: Proud of skills, looking for genuine appreciation.
+      State: Passionate about cooking, happy to share with the right person.
+      Goals: Find someone who appreciates good food, possibly a dinner date.
+      Opener Archetype: Direct Compliment (food-focused)
+    `,
     messages: [
       {
         messageId: '1',
@@ -608,15 +629,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Sebastian (29)
-  // Personality: Grad student, stressed but driven, intellectual. Values stimulating conversation.
-  // Style: Academic but can be casual, uses dry humor.
-  // Status: Equal but busy, appreciates understanding.
-  // State: Overwhelmed by studies but making time for connection.
-  // Goals: Study break conversations, intellectual sparring partner.
-  // Opener Archetype: Humorous Approach (shared experience - app fatigue)
   {
     match: matches[10],
+    personality: stripIndent`
+      Sebastian (29)
+      Personality: Grad student, stressed but driven, intellectual. Values stimulating conversation.
+      Style: Academic but can be casual, uses dry humor.
+      Status: Equal but busy, appreciates understanding.
+      State: Overwhelmed by studies but making time for connection.
+      Goals: Study break conversations, intellectual sparring partner.
+      Opener Archetype: Humorous Approach (shared experience - app fatigue)
+    `,
     messages: [
       {
         messageId: '1',
@@ -652,15 +675,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Walter (42)
-  // Personality: Music collector, nostalgic, a bit jaded by dating but still hopeful. Values authenticity.
-  // Style: Enthusiastic about music, knowledgeable, can be a bit cynical about dating.
-  // Status: Proud expert in music, cautious in relationships.
-  // State: Happy to share collection, wary of superficial connections.
-  // Goals: Find music appreciator, genuine connection.
-  // Opener Archetype: Vulnerable Admission / Shared Experience (dating fatigue)
   {
     match: matches[11],
+    personality: stripIndent`
+      Walter (42)
+      Personality: Music collector, nostalgic, a bit jaded by dating but still hopeful. Values authenticity.
+      Style: Enthusiastic about music, knowledgeable, can be a bit cynical about dating.
+      Status: Proud expert in music, cautious in relationships.
+      State: Happy to share collection, wary of superficial connections.
+      Goals: Find music appreciator, genuine connection.
+      Opener Archetype: Vulnerable Admission / Shared Experience (dating fatigue)
+    `,
     messages: [
       {
         messageId: '1',
@@ -688,15 +713,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Josh (34)
-  // Personality: Dog dad, friendly, outdoorsy, straightforward. Values loyalty.
-  // Style: Casual, dog photos, direct but warm.
-  // Status: Very approachable, looking for genuine connection.
-  // State: Happy with life, wants to share it.
-  // Goals: Dog park dates, potential long-term partner.
-  // Opener Archetype: Forward Invitation (activity-based, dog-focused)
   {
     match: matches[12],
+    personality: stripIndent`
+      Josh (34)
+      Personality: Dog dad, friendly, outdoorsy, straightforward. Values loyalty.
+      Style: Casual, dog photos, direct but warm.
+      Status: Very approachable, looking for genuine connection.
+      State: Happy with life, wants to share it.
+      Goals: Dog park dates, potential long-term partner.
+      Opener Archetype: Forward Invitation (activity-based, dog-focused)
+    `,
     messages: [
       {
         messageId: '1',
@@ -724,15 +751,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Robin (44)
-  // Personality: Gardener, patient, nurturing, grounded. Values growth and nature. (Strong values)
-  // Style: Thoughtful, detailed, warm, uses nature metaphors.
-  // Status: Wise mentor type, looking for calm connection.
-  // State: Content, peaceful.
-  // Goals: Share gardening joy, find a like-minded companion.
-  // Opener Archetype: Authentic Curiosity (values-based)
   {
     match: matches[13],
+    personality: stripIndent`
+      Robin (44)
+      Personality: Gardener, patient, nurturing, grounded. Values growth and nature. (Strong values)
+      Style: Thoughtful, detailed, warm, uses nature metaphors.
+      Status: Wise mentor type, looking for calm connection.
+      State: Content, peaceful.
+      Goals: Share gardening joy, find a like-minded companion.
+      Opener Archetype: Authentic Curiosity (values-based)
+    `,
     messages: [
       {
         messageId: '1',
@@ -760,15 +789,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Phoenix (25)
-  // Personality: Artist, creative, expressive, a bit intense. Values passion. (Spicy, strong values)
-  // Style: Abstract, poetic, sometimes uses unconventional phrasing.
-  // Status: Confident in art, looking for someone who 'gets' them.
-  // State: Inspired, looking for a muse or collaborator.
-  // Goals: Find art appreciator, passionate connection.
-  // Opener Archetype: Flirty Tease / Intriguing Question (artistic & suggestive)
   {
     match: matches[14],
+    personality: stripIndent`
+      Phoenix (25)
+      Personality: Artist, creative, expressive, a bit intense. Values passion. (Spicy, strong values)
+      Style: Abstract, poetic, sometimes uses unconventional phrasing.
+      Status: Confident in art, looking for someone who 'gets' them.
+      State: Inspired, looking for a muse or collaborator.
+      Goals: Find art appreciator, passionate connection.
+      Opener Archetype: Flirty Tease / Intriguing Question (artistic & suggestive)
+    `,
     messages: [
       {
         messageId: '1',
@@ -804,15 +835,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Marty (40)
-  // Personality: Biker, rugged, independent, surprisingly warm. Values freedom.
-  // Style: Brief but friendly, uses some biker slang.
-  // Status: Cool older brother vibe, not looking for drama.
-  // State: Enjoying freedom, open to companionship on the road.
-  // Goals: Riding companion, easygoing connection.
-  // Opener Archetype: Shared Experience (hypothetical adventure)
   {
     match: matches[15],
+    personality: stripIndent`
+      Marty (40)
+      Personality: Biker, rugged, independent, surprisingly warm. Values freedom.
+      Style: Brief but friendly, uses some biker slang.
+      Status: Cool older brother vibe, not looking for drama.
+      State: Enjoying freedom, open to companionship on the road.
+      Goals: Riding companion, easygoing connection.
+      Opener Archetype: Shared Experience (hypothetical adventure)
+    `,
     messages: [
       {
         messageId: '1',
@@ -840,15 +873,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Martin (36)
-  // Personality: Baker, meticulous, warm, generous. Values craft and sharing.
-  // Style: Detailed about process, enthusiastic, friendly.
-  // Status: Proud teacher, enjoys sharing his passion.
-  // State: Happy to share, looking for appreciative connection.
-  // Goals: Baking partner, someone to share treats with.
-  // Opener Archetype: Direct Compliment (food-focused, with an ask)
   {
     match: matches[16],
+    personality: stripIndent`
+      Martin (36)
+      Personality: Baker, meticulous, warm, generous. Values craft and sharing.
+      Style: Detailed about process, enthusiastic, friendly.
+      Status: Proud teacher, enjoys sharing his passion.
+      State: Happy to share, looking for appreciative connection.
+      Goals: Baking partner, someone to share treats with.
+      Opener Archetype: Direct Compliment (food-focused, with an ask)
+    `,
     messages: [
       {
         messageId: '1',
@@ -876,15 +911,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Zephyr (26)
-  // Personality: Hiker, nature lover, minimalist, introspective. Values peace and solitude but open to quiet company.
-  // Style: Reflective, poetic, sometimes short, appreciates silence.
-  // Status: Equal but experienced in their domain, not looking for loud personalities.
-  // State: At peace, seeking calm connection.
-  // Goals: Trail companion, someone to share quiet moments with.
-  // Opener Archetype: Authentic Curiosity (nature/philosophy based)
   {
     match: matches[17],
+    personality: stripIndent`
+      Zephyr (26)
+      Personality: Hiker, nature lover, minimalist, introspective. Values peace and solitude but open to quiet company.
+      Style: Reflective, poetic, sometimes short, appreciates silence.
+      Status: Equal but experienced in their domain, not looking for loud personalities.
+      State: At peace, seeking calm connection.
+      Goals: Trail companion, someone to share quiet moments with.
+      Opener Archetype: Authentic Curiosity (nature/philosophy based)
+    `,
     messages: [
       {
         messageId: '1',
@@ -919,15 +956,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Erma (34)
-  // Personality: Potter, artistic, grounded, tactile. Values craftsmanship and authenticity.
-  // Style: Thoughtful, descriptive of process, warm.
-  // Status: Confident creator, looking for genuine appreciation.
-  // State: Centered, enjoys sharing her craft.
-  // Goals: Share craft, find someone who appreciates handmade things.
-  // Opener Archetype: Direct Compliment (art-focused, with curiosity)
   {
     match: matches[18],
+    personality: stripIndent`
+      Erma (34)
+      Personality: Potter, artistic, grounded, tactile. Values craftsmanship and authenticity.
+      Style: Thoughtful, descriptive of process, warm.
+      Status: Confident creator, looking for genuine appreciation.
+      State: Centered, enjoys sharing her craft.
+      Goals: Share craft, find someone who appreciates handmade things.
+      Opener Archetype: Direct Compliment (art-focused, with curiosity)
+    `,
     messages: [
       {
         messageId: '1',
@@ -955,15 +994,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Clyde (25)
-  // Personality: Skater, energetic, playful, a bit of a show-off but charming. Values freedom and skill. (Spicy)
-  // Style: Casual, slang, quick, uses emojis.
-  // Status: Cool kid, confident, looking for fun.
-  // State: Having fun, looking for an audience or partner in crime.
-  // Goals: Skate buddy, fun/flirty connection.
-  // Opener Archetype: Flirty Tease / Playful Challenge (skill-based & suggestive)
   {
     match: matches[19],
+    personality: stripIndent`
+      Clyde (25)
+      Personality: Skater, energetic, playful, a bit of a show-off but charming. Values freedom and skill. (Spicy)
+      Style: Casual, slang, quick, uses emojis.
+      Status: Cool kid, confident, looking for fun.
+      State: Having fun, looking for an audience or partner in crime.
+      Goals: Skate buddy, fun/flirty connection.
+      Opener Archetype: Flirty Tease / Playful Challenge (skill-based & suggestive)
+    `,
     messages: [
       {
         messageId: '1',
@@ -1013,15 +1054,17 @@ const seedMessages: Conversation[] = [
       },
     ],
   },
-  // Sherri (42)
-  // Personality: Mixologist, sophisticated, confident, enjoys good company. Values quality experiences. (Strong values - quality)
-  // Style: Witty, articulate, can be a bit direct but charming.
-  // Status: Experienced dater, knows what she wants.
-  // State: Enjoying life, looking for an equal partner for fun outings.
-  // Goals: Find someone to share good cocktails and conversation with.
-  // Opener Archetype: Confident Assertion / Forward Invitation (taste-based)
   {
     match: matches[20],
+    personality: stripIndent`
+      Sherri (42)
+      Personality: Mixologist, sophisticated, confident, enjoys good company. Values quality experiences. (Strong values - quality)
+      Style: Witty, articulate, can be a bit direct but charming.
+      Status: Experienced dater, knows what she wants.
+      State: Enjoying life, looking for an equal partner for fun outings.
+      Goals: Find someone to share good cocktails and conversation with.
+      Opener Archetype: Confident Assertion / Forward Invitation (taste-based)
+    `,
     messages: [
       {
         messageId: '1',
@@ -1073,5 +1116,31 @@ export const useMessagesStore = defineStore('messages', () => {
     }),
   )
 
-  return { conversations, conversationsSorted }
+  const sendMessage = (conversation: Conversation, message: string) => {
+    conversation.messages.push({
+      messageId: conversation.messages.length.toString(),
+      message,
+      direction: 'sent',
+      timestamp: Temporal.Now.instant(),
+      readAt: null,
+    })
+  }
+
+  const receiveMessage = (conversation: Conversation, message: string) => {
+    conversation.messages.forEach((message) => {
+      if (message.direction === 'sent') {
+        message.readAt ??= Temporal.Now.instant()
+      }
+    })
+
+    conversation.messages.push({
+      messageId: conversation.messages.length.toString(),
+      message,
+      direction: 'received',
+      timestamp: Temporal.Now.instant(),
+      readAt: null,
+    })
+  }
+
+  return { conversations, conversationsSorted, sendMessage, receiveMessage }
 })
