@@ -7,6 +7,8 @@ import Checks from '@/components/icons/Checks.vue'
 
 import { useMessagesStore } from '@/stores/messages'
 
+const form = ref<HTMLFormElement>()
+
 const store = useMessagesStore()
 
 const matchId = useRoute().params.matchId as string
@@ -23,16 +25,29 @@ const finalMessageIsSent = computed(() => conversation.value.messages.at(-1)?.di
 const messagesContainer = ref<HTMLElement>()
 
 const scrollToBottom = () => {
-  if (messagesContainer.value) {
-    messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight
-  }
+  nextTick(() => {
+    if (messagesContainer.value) {
+      messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight
+    }
+  })
 }
 
 onMounted(() => {
-  nextTick(() => {
-    scrollToBottom()
-  })
+  scrollToBottom()
 })
+
+const sendMessage = async (event: Event) => {
+  const formData = new FormData(event.target as HTMLFormElement)
+  const message = formData.get('message')! as string
+
+  if (message.trim().length === 0) return
+
+  store.sendMessage(conversation.value, message)
+  scrollToBottom()
+  form.value!.reset()
+
+  store.receiveMessage(conversation.value, 'no response')
+}
 </script>
 
 <template>
@@ -61,10 +76,13 @@ onMounted(() => {
     </div>
 
     <div class="flex-shrink-0 p-4">
-      <input
-        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brandpink-500 focus:border-transparent"
-        placeholder="Type a message..."
-      />
+      <form ref="form" @submit.prevent="sendMessage">
+        <input
+          name="message"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brandpink-500 focus:border-transparent"
+          placeholder="Type a message..."
+        />
+      </form>
     </div>
   </main>
 </template>
