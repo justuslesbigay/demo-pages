@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, nextTick, watch } from 'vue'
+import { computed, ref, nextTick, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import MatchMiniPhoto from '@/components/matches/MatchMiniPhoto.vue'
@@ -60,11 +60,6 @@ const loremIpsum = [
 const randomResponse = () => loremIpsum[Math.floor(Math.random() * loremIpsum.length)]
 
 const probablyMatchReplies = async () => {
-  // Allow user to type a lot while only getting one response
-  if (matchIsTyping.value) return
-  // People won't reply to message you send
-  //if (Math.random() < 0.8) return
-
   await new Promise((resolve) => setTimeout(resolve, 750 + Math.random() * 1_000))
   store.markMessageRead(conversation.value)
   matchIsTyping.value = true
@@ -89,9 +84,16 @@ const sendMessage = async (event: Event) => {
 
 <template>
   <main class="h-full flex flex-col">
-    <header class="flex-shrink-0 flex items-end gap-2 p-2">
-      <MatchMiniPhoto :match="conversation.match" />
-      <p>Chatting with {{ conversation.match.name }}</p>
+    <header class="flex-shrink-0 flex gap-4 p-2 bg-brandgreen-700 rounded-md">
+      <MatchMiniPhoto :match="conversation.match" class="-ml-2 -my-2 h-24 w-20" />
+      <div>
+        <div class="text-xl text-gray-50 ml-2">Chatting with</div>
+        <div
+          class="font-caveat text-4xl font-semibold w-fit underline decoration-dashed underline-offset-3 rounded-lg bg-brandgreen-50 text-brandgreen-700 px-2 py-1"
+        >
+          {{ conversation.match.name }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
     </header>
 
     <div ref="messagesContainer" class="flex-1 overflow-y-auto min-h-0 px-4 flex flex-col">
@@ -103,7 +105,7 @@ const sendMessage = async (event: Event) => {
           :class="[
             message.direction === 'sent'
               ? 'bg-brandpink-100 self-end rounded-tl-xl rounded-bl-xl rounded-tr-sm rounded-br-sm'
-              : 'bg-gray-200 rounded-tr-xl rounded-br-xl rounded-tl-sm rounded-bl-sm',
+              : 'bg-brandgreen-50 rounded-tr-xl rounded-br-xl rounded-tl-sm rounded-bl-sm',
           ]"
         >
           {{ message.message }}
@@ -113,7 +115,7 @@ const sendMessage = async (event: Event) => {
 
       <ChatTeardropDotsFill
         v-if="matchIsTyping"
-        class="animate-pulse text-3xl text-brandpink-300"
+        class="animate-pulse text-3xl text-brandgreen-300 flex-shrink-0"
       />
     </div>
 
