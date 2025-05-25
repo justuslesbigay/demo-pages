@@ -94,8 +94,8 @@ const sendMessage = async (event: Event) => {
       <p>Chatting with {{ conversation.match.name }}</p>
     </header>
 
-    <div ref="messagesContainer" class="flex-1 overflow-y-auto min-h-0 px-4">
-      <ul class="flex flex-col justify-end min-h-full gap-2 mt-auto">
+    <div ref="messagesContainer" class="flex-1 overflow-y-auto min-h-0 px-4 flex flex-col">
+      <ul class="flex flex-col justify-end flex-1 gap-2 mt-auto">
         <li
           v-for="(message, i) in conversation.messages"
           :key="message.messageId"
