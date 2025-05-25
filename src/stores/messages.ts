@@ -1126,12 +1126,16 @@ export const useMessagesStore = defineStore('messages', () => {
     })
   }
 
-  const receiveMessage = (conversation: Conversation, message: string) => {
+  const markMessageRead = (conversation: Conversation) => {
     conversation.messages.forEach((message) => {
       if (message.direction === 'sent') {
         message.readAt ??= Temporal.Now.instant()
       }
     })
+  }
+
+  const receiveMessage = (conversation: Conversation, message: string) => {
+    markMessageRead(conversation)
 
     conversation.messages.push({
       messageId: conversation.messages.length.toString(),
@@ -1142,5 +1146,5 @@ export const useMessagesStore = defineStore('messages', () => {
     })
   }
 
-  return { conversations, conversationsSorted, sendMessage, receiveMessage }
+  return { conversations, conversationsSorted, sendMessage, receiveMessage, markMessageRead }
 })

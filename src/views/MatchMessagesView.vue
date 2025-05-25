@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, nextTick } from 'vue'
+import { computed, ref, onMounted, nextTick, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import MatchMiniPhoto from '@/components/matches/MatchMiniPhoto.vue'
+
 import Checks from '@/components/icons/Checks.vue'
 import PaperPlaneRight from '@/components/icons/PaperPlaneRight.vue'
+import ChatTeardropDotsFill from '@/components/icons/ChatTeardropDotsFill.vue'
 
 import { useMessagesStore } from '@/stores/messages'
 
@@ -25,6 +27,8 @@ const finalMessageIsSent = computed(() => conversation.value.messages.at(-1)?.di
 
 const messagesContainer = ref<HTMLElement>()
 
+const matchIsTyping = ref(false)
+
 const scrollToBottom = () => {
   nextTick(() => {
     if (messagesContainer.value) {
@@ -33,9 +37,13 @@ const scrollToBottom = () => {
   })
 }
 
-onMounted(() => {
-  scrollToBottom()
-})
+watch(
+  [conversation.value.messages, matchIsTyping],
+  () => {
+    scrollToBottom()
+  },
+  { immediate: true },
+)
 
 const loremIpsum = [
   'Aliquam at libero et mauris eleifend volutpat.',
@@ -51,6 +59,21 @@ const loremIpsum = [
 ]
 const randomResponse = () => loremIpsum[Math.floor(Math.random() * loremIpsum.length)]
 
+const probablyMatchReplies = async () => {
+  // Allow user to type a lot while only getting one response
+  if (matchIsTyping.value) return
+  // People won't reply to message you send
+  //if (Math.random() < 0.8) return
+
+  await new Promise((resolve) => setTimeout(resolve, 750 + Math.random() * 1_000))
+  store.markMessageRead(conversation.value)
+  matchIsTyping.value = true
+  await new Promise((resolve) => setTimeout(resolve, 750 + Math.random() * 1_000))
+
+  store.receiveMessage(conversation.value, randomResponse())
+  matchIsTyping.value = false
+}
+
 const sendMessage = async (event: Event) => {
   const formData = new FormData(event.target as HTMLFormElement)
   const message = formData.get('message')! as string
@@ -58,10 +81,9 @@ const sendMessage = async (event: Event) => {
   if (message.trim().length === 0) return
 
   store.sendMessage(conversation.value, message)
-  scrollToBottom()
   form.value!.reset()
 
-  store.receiveMessage(conversation.value, randomResponse())
+  await probablyMatchReplies()
 }
 </script>
 
@@ -88,6 +110,11 @@ const sendMessage = async (event: Event) => {
           <Checks v-if="finalMessageIsSent && i === mostRecentlyReadMessage" class="ml-auto" />
         </li>
       </ul>
+
+      <ChatTeardropDotsFill
+        v-if="matchIsTyping"
+        class="animate-pulse text-3xl text-brandpink-300"
+      />
     </div>
 
     <div class="flex-shrink-0 p-4">
