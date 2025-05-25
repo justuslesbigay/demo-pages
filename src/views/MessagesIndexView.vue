@@ -33,7 +33,7 @@ const store = useMessagesStore()
           <header class="font-semibold text-xl">{{ conversation.match.name }}</header>
 
           <p v-if="conversation.messages.length === 0" class="italic">Start a conversation!</p>
-          <p v-else class="line-clamp-2">{{ conversation.messages.at(0)?.message }}</p>
+          <p v-else class="line-clamp-2">{{ conversation.messages.at(-1)?.message }}</p>
         </div>
       </li>
     </ul>
