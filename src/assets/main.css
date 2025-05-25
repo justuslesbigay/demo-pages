@@ -6,9 +6,22 @@
   --color-brandpink-200: oklch(0.87 0.14 339.8);
   --color-brandpink-300: oklch(0.8 0.19 339.8);
   --color-brandpink-400: oklch(0.7 0.23 339.8);
+  /* Baseline brand color */
   --color-brandpink-500: oklch(0.61 0.265452 339.8007);
   --color-brandpink-600: oklch(0.52 0.26 339.8);
   --color-brandpink-700: oklch(0.44 0.24 339.8);
   --color-brandpink-800: oklch(0.35 0.2 339.8);
   --color-brandpink-900: oklch(0.25 0.17 339.8);
+
+  --color-brandgreen-50: oklch(0.97 0.05 175.6457);
+  --color-brandgreen-100: oklch(0.93 0.08 175.6457);
+  --color-brandgreen-200: oklch(0.89 0.12 175.6457);
+  --color-brandgreen-300: oklch(0.85 0.14 175.6457);
+  --color-brandgreen-400: oklch(0.83 0.15 175.6457);
+  /* Baseline brand color */
+  --color-brandgreen-500: oklch(0.818 0.153384 175.6457);
+  --color-brandgreen-600: oklch(0.72 0.15 175.6457);
+  --color-brandgreen-700: oklch(0.62 0.14 175.6457);
+  --color-brandgreen-800: oklch(0.47 0.12 175.6457);
+  --color-brandgreen-900: oklch(0.32 0.1 175.6457);
 }
